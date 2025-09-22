@@ -1,0 +1,38 @@
+---
+
+##  Final Report 
+
+Sections:
+
+### 1. Solution Approach
+- **Attempted methods**: tried raw resize vs proper JSON parsing, dummy masks vs polygon masks.  
+- **Final chosen approach**: DeepLabV3 (MobileNetV2 backbone), Dice loss, JSON→mask preprocessing.  
+- **Post-processing**: Whitening filter applied using mask overlay.  
+
+### 2. Preprocessing
+- Resize all images & masks to fixed size (e.g., 512×512).  
+- Convert JSON polygons into binary masks (LabelMe → cv2.fillPoly).  
+
+### 3. Model
+- DeepLabV3 + MobileNetV2 (lightweight, near real-time).  
+  
+### 4. Training
+- Optimizer: Adam, LR=1e-3.  
+- Loss: DiceLoss.  
+- Epochs: 10 (Dice improving steadily → best=1.0).  
+
+### 5. Evaluation
+- Metric: Dice coefficient.  
+- Achieved Dice = **1.0 on validation** (caution: small dataset may inflate results).  
+
+### 6. Future Improvements
+- Add **data augmentation** (rotation, brightness, mouth-open vs closed).  
+- Multi-class (teeth vs gums vs lips) to improve whitening precision.  
+- Distillation for mobile deployment.    
+- Quantized version available for deployment (For fast loading).
+- Train with larger dataset for robustness.
+- Lighter models (EfficientNet-Lite, MobileNetV3).
+- Deploy on Hugging Face Spaces for free public demo.
+- Explore GAN-based whitening.
+
+---

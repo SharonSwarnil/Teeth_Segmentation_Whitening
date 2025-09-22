@@ -1,0 +1,1 @@
+from .mobilenetv2_deeplabv3 import get_model

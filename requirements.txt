@@ -1,0 +1,24 @@
+torch
+torchvision
+pillow
+numpy
+opencv-python
+tqdm
+gradio
+
+# Teeth Segmentation & Whitening (Assignment Problem 1)
+
+This project builds a pipeline for **teeth detection/segmentation** from face images and a **bonus whitening filter**.  
+It uses **DeepLabV3 with MobileNetV2 backbone** for lightweight, near real-time segmentation.
+
+---
+
+## Features
+- JSON → binary mask preprocessing (supports LabelMe-style annotations).
+- Training with Dice loss for segmentation accuracy.
+- Inference with overlay + mask output.
+- Bonus: whitening filter applied to predicted teeth masks.
+- Model quantization support for faster CPU/GPU inference.
+- Reproducibility instructions + requirements.txt.
+
+---
