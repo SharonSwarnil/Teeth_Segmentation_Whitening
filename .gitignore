@@ -1,0 +1,23 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+.env/
+venv/
+cv_env/
+
+# Ignore model checkpoints and large files
+checkpoints/
+training/
+results/
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/project files
+.vscode/
+*.code-workspace
