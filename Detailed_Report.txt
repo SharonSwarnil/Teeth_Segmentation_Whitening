@@ -35,4 +35,6 @@ Sections:
 - Deploy on Hugging Face Spaces for free public demo.
 - Explore GAN-based whitening.
 
+##7 Note - Training data best outcome saved in "Checkpoint/best_model.path".
+
 ---
