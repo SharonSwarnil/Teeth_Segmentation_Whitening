@@ -1,29 +1,24 @@
-﻿# Python cache
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Virtual environments
+﻿# Ignore virtual env
+cv_env/
 .venv/
 venv/
-env/
 
-# Jupyter notebooks checkpoints
-.ipynb_checkpoints
-
-# Logs
-*.log
-
-# PyTorch / model weights
-*.pth
-*.pt
-
-# Dataset folders (optional – keep them local)
-data/
-results/
-checkpoints/
-
-# IDE configs
+# Ignore IDE/editor files
 .vscode/
 .idea/
+
+# Ignore caches
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore large data
+data/
+*.zip
+*.tar
+*.pth
+*.h5
+
+# Ignore runtime artifacts
+.gradio/
+results/temp/
