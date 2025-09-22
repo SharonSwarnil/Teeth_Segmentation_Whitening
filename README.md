@@ -1,26 +1,38 @@
-# Teeth Detection/Segmentation and Realistic Whitening Pipeline
+﻿# 🦷 Teeth Segmentation & Whitening with DeepLabV3
 
+This repository contains a **teeth segmentation & whitening pipeline** using **PyTorch + DeepLabV3 (MobileNetV2 backbone)**.  
+It segments teeth from dental images and applies **natural whitening** using LAB color space.
 
-#  Teeth Segmentation & Whitening
+## 📂 Project Structure
+- \models/\ → model architectures (DeepLabV3, MobileNetV2 wrapper)
+- \inference/\ → inference scripts (\infer.py\, \infer_all.py\)
+- \	raining/\ → training loop, dataset, loss functions
+- \data_preprocessing/\ → JSON annotation parser → masks
+- \esults/\ → saved inference outputs (masks, overlays, whitening)
 
-This project implements **teeth detection/segmentation** and applies a **realistic whitening filter** using deep learning.  
-Built with **PyTorch + torchvision** (DeepLabV3 with MobileNetV2 backbone) and a **Gradio UI** for easy demos.
+## 🚀 Usage
+### Training
+\\\ash
+python training/train.py
+\\\
 
+### Inference
+\\\ash
+python inference/infer.py --image_path ./data/test/img/sample.jpg
+\\\
 
-## Solution Approach
+### Web Demo (Gradio)
+\\\ash
+python models/app.py
+\\\
 
-###  Dataset Preparation
-- Used the Dental AI Dataset (images + JSON annotations).
-- Preprocessed JSON to extract only 'teeth' class polygons.
-- Converted polygons to binary masks using
-- Run training to generate checkpoints.
+Then open [http://127.0.0.1:7860](http://127.0.0.1:7860).
 
-### Features
-- Teeth segmentation using DeepLabV3 (MobileNetV2 backbone).
-- Whitening filter applied only on segmented teeth area.
-- Natural whitening effect (avoids lips/tongue).
-- Batch inference and Gradio interactive app.
-- Quantization support for fast CPU inference.
-- Supports **batch inference** and **Gradio demo UI**
+## ✅ Features
+- Teeth segmentation (binary mask)
+- Whitening post-processing in LAB space
+- Inference with **CPU quantization for faster speed**
+- Gradio web app for quick demo
 
----
+## 📜 License
+MIT License.

@@ -1,23 +1,29 @@
-# Ignore Python cache and compiled files
+﻿# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 
-# Ignore virtual environments
-.env/
+# Virtual environments
+.venv/
 venv/
-cv_env/
+env/
 
-# Ignore model checkpoints and large files
-checkpoints/
-training/
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# PyTorch / model weights
+*.pth
+*.pt
+
+# Dataset folders (optional – keep them local)
+data/
 results/
+checkpoints/
 
-# Ignore OS/system files
-.DS_Store
-Thumbs.db
-
-# Ignore IDE/project files
+# IDE configs
 .vscode/
-*.code-workspace
+.idea/
